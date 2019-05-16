@@ -15,6 +15,13 @@ public class Main {
         Item2.display();
         Item3.display();
         Item4.display();
-
+        System.out.println("Enter the input");
+        String[] input = sc.nextLine().split(" ");
+        int quantity = Integer.parseInt(input[0]);
+        String name = input[1];
+        int cost = Integer.parseInt(input[3]);
+        Item.calculateSaleTax(name, quantity, cost, Tax);
     }
+
 }
+
