@@ -16,5 +16,16 @@ public class Item {
         System.out.println(name);
     }
 
+     static void calculateSaleTax(String name, int quantity, int cost, double Tax) {
+        double calculatedTax = cost * Tax;
+        System.out.println("--------------------------------------------------------------------------");
+        System.out.printf("%10s %10s %10s %20s %20s ", "name", "quantity", "cost", "Tax", "TotalCost");
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------");
+        System.out.printf("%10s %10s %10s %20s %20s ", name, quantity, cost, Tax, calculatedTax);
+
+
+    }
+
 
 }
