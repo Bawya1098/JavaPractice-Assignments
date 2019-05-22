@@ -3,6 +3,7 @@ package com.company.PracticePrograms;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class Student {
     int rollno;
     String name;
@@ -17,6 +18,8 @@ public class Student {
         this.subMarks2 = subMarks2;
         this.subMarks3 = subMarks3;
     }
+
+
 
     public static void main(String[] args) {
         ArrayList<Student> list = new ArrayList<>();
@@ -34,13 +37,14 @@ public class Student {
             int subMarks3 = Integer.parseInt(arr[4]);
             Student s = new Student(rollno, name, subMarks1, subMarks2, subMarks3);
             list.add(s);
-            System.out.println(list);
+        }
+        for (int i = 0; i < size; i++) {
+            Student x = list.get(i);
+            System.out.printf("%5s %5s %5s %5s %5s", x.rollno, x.name, x.subMarks1, x.subMarks2, x.subMarks3);
+
 
         }
-
-
     }
-
-
 }
+
 
