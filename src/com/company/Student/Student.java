@@ -15,7 +15,6 @@ public class Student {
         this.subMarks2 = subMarks2;
         this.subMarks3 = subMarks3;
         this.department = department;
-
     }
 
      public  int total() {
