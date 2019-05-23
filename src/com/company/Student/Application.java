@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class Application {
     public static void main(String[] args) {
         List<Student> students = new ArrayList<>();
+        Department cseDept = new Department("CSE", "Chandra");
+        Department eceDept = new Department("ECE", "Siva");
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter the size");
         int size = scanner.nextInt();
@@ -31,17 +33,44 @@ public class Application {
 
 
         System.out.println("---------STUDENT DETAILS WITH DEPARTMENT----------------------");
-        printDepartmentWiseStudentDetails(students, "CSE");
-        printDepartmentWiseStudentDetails(students, "ECE");
+        printDepartmentWiseStudentDetails(students, cseDept);
+        printDepartmentWiseStudentDetails(students, eceDept);
+
+        System.out.println("---------STUDENT DETAILS WITH DEPARTMENT--HOD--------------------");
+        printDepartmentWithHOD(students, cseDept);
+        printDepartmentWithHOD(students, eceDept);
+
+
     }
 
-    private static void printDepartmentWiseStudentDetails(List<Student> students, String department) {
-        System.out.println("department: " + department);
+    private static void printDepartmentWithHOD(List<Student> students, Department department) {
+        System.out.println("department: " + department.name);
+        System.out.println("HOD: " + department.hod);
         for (int i = 0; i < students.size(); i++) {
             Student student = students.get(i);
             int total = student.total();
             String result = student.result();
-            if ((student.department.equalsIgnoreCase(department))) {
+            if ((student.department.equalsIgnoreCase(department.name))) {
+                if (result.equals("FAIL")) {
+                    String totalMarks = "-";
+                    System.out.printf("%5s %5s %5s %5s %5s %10s %10s", student.rollno, student.name, student.subMarks1, student.subMarks2, student.subMarks3, totalMarks, result);
+                    System.out.println();
+                } else {
+                    System.out.printf("%5s %5s %5s %5s %5s %10s %10s", student.rollno, student.name, student.subMarks1, student.subMarks2, student.subMarks3, total, result);
+                    System.out.println();
+                }
+            }
+        }
+    }
+
+
+    private static void printDepartmentWiseStudentDetails(List<Student> students, Department department) {
+        System.out.println("department: " + department.name);
+        for (int i = 0; i < students.size(); i++) {
+            Student student = students.get(i);
+            int total = student.total();
+            String result = student.result();
+            if ((student.department.equalsIgnoreCase(department.name))) {
                 if (result.equals("FAIL")) {
                     String totalMarks = "-";
                     System.out.printf("%5s %5s %5s %5s %5s %10s %10s", student.rollno, student.name, student.subMarks1, student.subMarks2, student.subMarks3, totalMarks, result);
