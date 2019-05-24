@@ -15,14 +15,15 @@ public class Student {
         this.subMarks2 = subMarks2;
         this.subMarks3 = subMarks3;
         this.department = department;
+
     }
 
-     public  int total() {
-        return  subMarks1 + subMarks2 + subMarks3;
+    public int total() {
+        return subMarks1 + subMarks2 + subMarks3;
     }
 
 
-      public  String result() {
+    public String result() {
         String result;
         if (subMarks1 <= 25 || subMarks2 <= 25 || subMarks3 <= 25) {
             result = "FAIL";
