@@ -1,13 +1,15 @@
 package com.company.Student;
 
+import java.util.HashMap;
+import java.util.List;
+
 public class Department {
-     String name;
-    String hod;
+    HashMap<String, String> department = new HashMap<>();
 
-    public Department(String name, String hod) {
-        this.name = name;
-        this.hod = hod;
+    HashMap<String, String> setDepartment() {
+        department.put("cse", "chandra");
+        department.put("ece", "siva");
+        return department;
     }
-
 
 }
